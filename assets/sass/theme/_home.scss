@@ -190,12 +190,6 @@
   }
 	&:hover{
 		cursor:pointer;
-		.details{
-			.primary-btn{
-				@extend .p1-gradient-bg;
-				color:$white !important;
-			}
-		}
 	}
 	@media(max-width:960px){
 		margin-bottom:30px;

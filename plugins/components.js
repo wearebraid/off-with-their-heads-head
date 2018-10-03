@@ -15,4 +15,5 @@ import staffCard from '~/components/staffCard'
 Vue.component('site-header', siteHeader)
 Vue.component('site-footer', siteFooter)
 Vue.component('banner-area', bannerArea)
+Vue.component('cards-area', cardsArea)
 Vue.component('staff-card', staffCard)
