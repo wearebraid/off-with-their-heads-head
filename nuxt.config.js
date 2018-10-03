@@ -1,7 +1,17 @@
+const dotenv = require('dotenv')
 const pkg = require('./package')
+
+dotenv.config()
+
+const cms = process.env.CMS || 'drupal'
+const siteURL = process.env.SITE_URL || '#missing-site-url'
 
 module.exports = {
   mode: 'universal',
+  env: {
+    cms,
+    siteURL
+  },
 
   /*
   ** Headers of the page

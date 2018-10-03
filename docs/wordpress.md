@@ -39,7 +39,7 @@ Download the theme here: http://brd.bz/5d52675e
 
 #### 8.) Re-Open the Pantheon dashboard for your site and navigate to the database import screen. Download the following database export, and then upload it via the "file" method.
 
-Download the following database file for import: http://brd.bz/fc21dad4
+Download the following database file for import: http://brd.bz/01526150
 
 ---
 ![Import Database](./img/pantheon-database-import.jpg)

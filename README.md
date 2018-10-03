@@ -41,17 +41,17 @@ For this example project, we are normalizing the data that is being requested fr
 
 ```javascript
 {
-	id: <Number>,
-	slug: <String>,
-	headshot: <String>, // url to remote resource
-	first_name: <String>,
-	last_name: <String>,
-	job_title: <String>,
+	bio: <String>, // will contain HTML markup
 	department: <String>,
-	quote: <String>,
-	phone: <String>,
 	email: <String>,
+	first_name: <String>,
+	headshot: <String>, // url to remote resource
+	id: <Number>,
+	job_title: <String>,
+	last_name: <String>,
 	linkedin: <String>,
-	bio: <String> // will contain HTML markup
+	phone: <String>,
+	quote: <String>,
+	slug: <String>
 }
 ```
