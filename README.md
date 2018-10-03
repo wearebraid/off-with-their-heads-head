@@ -34,3 +34,24 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## Project Data Reference
+
+For this example project, we are normalizing the data that is being requested from Drupal and WordPress in order to make the front-end development standardized for all participants regardless of their platform choice. In your application's `store/index.js` there will be a `staff` key which will be an array of objects with the following schema:
+
+```javascript
+{
+	id: <Number>,
+	slug: <String>,
+	headshot: <String>, // url to remote resource
+	first_name: <String>,
+	last_name: <String>,
+	job_title: <String>,
+	department: <String>,
+	quote: <String>,
+	phone: <String>,
+	email: <String>,
+	linkedin: <String>,
+	bio: <String> // will contain HTML markup
+}
+```
