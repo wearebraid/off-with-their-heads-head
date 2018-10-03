@@ -9,7 +9,7 @@
 ![Add site details](./img/pantheon-site-details.jpg)
 
 #### 3.) Once the site creation is complete, choose **WordPress** from the menu.
--
+---
 ![Choose CMS](./img/pantheon-choose-cms.jpg)
 
 #### 4.) Install WordPress
