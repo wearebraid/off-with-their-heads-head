@@ -1,6 +1,6 @@
 <template>
-  <section class="container">
-    <h1>Headless</h1>
+  <section>
+    <banner-area />
   </section>
 </template>
 

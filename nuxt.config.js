@@ -36,21 +36,31 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/sass/main.scss'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/components'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
+    'nuxt-sass-resources-loader',
     '@nuxtjs/axios'
   ],
+
+  /*
+  ** Sass resource loader configuration
+  */
+  sassResources: [
+    './assets/sass/global.scss'
+  ],
+
   /*
   ** Axios module configuration
   */
