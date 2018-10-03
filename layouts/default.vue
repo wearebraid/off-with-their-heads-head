@@ -2,6 +2,7 @@
   <div>
     <site-header />
     <nuxt/>
+    <site-footer />
   </div>
 </template>
 

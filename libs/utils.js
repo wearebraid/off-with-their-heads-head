@@ -12,10 +12,7 @@ import cloneDeep from 'clone-deep'
 export function standardizeCMSData (obj) {
   if (process.env.cms === 'drupal') {
   } else if (process.env.cms === 'wordpress') {
-    obj = obj.map((item) => {
-      let {id, slug, acf, ...remainder} = item
-      return Object.assign({id, slug}, acf)
-    })
+    obj = obj.map(({id, slug, acf}) => Object.assign({id, slug}, acf))
   }
   return obj
 }
