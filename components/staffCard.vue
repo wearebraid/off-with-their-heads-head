@@ -2,13 +2,13 @@
   <div class="staff-card col-md-6">
     <div class="staff-inner single-product">
       <div class="thumb">
-        <img src="https://placehold.it/128x128">
+        <img :src="staffData.headshot">
       </div>
       <div class="details">
-        <h4>Staff Member Name</h4>
-        <p><strong>Position, <em>Department</em></strong></p>
+        <h4>{{ name }}</h4>
+        <p><strong>{{ staffData.job_title }}, <em>{{ staffData.department }}</em></strong></p>
         <p>
-          "Member quote goes here, they're normally not too long, but not too short either."
+          "{{ staffData.quote }}"
         </p>
         <a
           href="#"
@@ -20,7 +20,17 @@
 
 <script>
 export default {
-
+  props: {
+    staffData: {
+      type: Object,
+      required: true
+    }
+  },
+  computed: {
+    name () {
+      return `${this.staffData.first_name} ${this.staffData.last_name}`
+    }
+  }
 }
 </script>
 

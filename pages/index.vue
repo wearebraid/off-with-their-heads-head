@@ -5,6 +5,7 @@
       <staff-card
         v-for="staff in staffList"
         :key="staff.id"
+        :staff-data="staff"
       />
     </cards-area>
   </section>
