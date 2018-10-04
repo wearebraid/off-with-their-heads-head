@@ -1,20 +1,20 @@
 <template>
   <div class="staff-full-bio">
     <div class="headshot">
-      <img src="https://placehold.it/128x128">
+      <img :src="staffData.headshot">
     </div>
     <div class="meta">
-      <h3>Staff Member Name</h3>
-      <p><strong>Position, <em>Department</em></strong></p>
+      <h3>{{ name }}</h3>
+      <p><strong>{{ staffData.job_title }}, <em>{{ staffData.department }}</em></strong></p>
       <p>
-        <strong>Email:</strong> <a href="mailto:email@domain.com">email@domain.com</a><br>
-        <strong>Phone:</strong> <a href="tel:1234567890">123-456-7890</a><br>
-        <strong>LinkedIn:</strong> <a href="http://linkedin.com/">http://linkedin.com</a>
+        <strong>Email:</strong> <a :href="`mailto:${staffData.email}`">{{ staffData.email }}</a><br>
+        <strong>Phone:</strong> <a :href="`tel:${staffData.phone}`">{{ staffData.phone }}</a><br>
+        <strong>LinkedIn:</strong> <a :href="staffData.linkedin">{{ staffData.linkedin }}</a>
       </p>
     </div>
     <div
       class="bio"
-      v-html="'<p>Bio goes here.</p>'"
+      v-html="staffData.bio"
     />
   </div>
 </template>
@@ -25,6 +25,11 @@ export default {
     staffData: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    name () {
+      return `${this.staffData.first_name} ${this.staffData.last_name}`
     }
   }
 }
