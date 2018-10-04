@@ -9,7 +9,10 @@
           :staff-data="staff"
         />
       </template>
-      <template slot="modal-content">
+      <template
+        v-if="activeStaffProfile"
+        slot="modal-content"
+      >
         <staff-full-bio :staff-data="activeStaffProfile" />
       </template>
     </cards-area>
