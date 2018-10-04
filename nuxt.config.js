@@ -51,6 +51,7 @@ module.exports = {
   */
   modules: [
     'nuxt-sass-resources-loader',
+    'nuxt-vuex-router-sync',
     '@nuxtjs/axios'
   ],
 

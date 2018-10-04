@@ -13,7 +13,7 @@
         v-if="activeStaffProfile"
         slot="modal-content"
       >
-        <staff-full-bio :staff-data="activeStaffProfile" />
+        <nuxt-child :key="$route.params.slug" />
       </template>
     </cards-area>
   </section>
