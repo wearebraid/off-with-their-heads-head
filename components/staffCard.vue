@@ -46,6 +46,9 @@ export default {
   .staff-inner {
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba($primary-color, .25);
 
     @include large-up {
       flex-direction: row;
@@ -54,14 +57,22 @@ export default {
 
   .thumb {
     display: flex;
+    border-bottom: none;
 
     img {
       margin: auto;
+      border-radius: 5px;
     }
   }
 
   .details {
     flex: 1;
+    border-top: 1px solid rgba($primary-color, .15);
+
+    @include large-up {
+      border-top: none;
+      border-left: 1px solid rgba($primary-color, .15);
+    }
 
     h4 {
       margin-bottom: .25em;
@@ -71,6 +82,8 @@ export default {
 
 .primary-btn {
     color: $title-color !important;
+    border: 1px solid rgba($primary-color, .25);
+    border-radius: 3px;
 
     .staff-card:hover & {
       color: $primary-color !important;
