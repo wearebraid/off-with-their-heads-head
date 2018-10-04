@@ -2,22 +2,31 @@
   <section>
     <banner-area />
     <cards-area>
-      <staff-card
-        v-for="staff in staffList"
-        :key="staff.id"
-      />
+      <template slot="grid-content">
+        <staff-card
+          v-for="staff in staffList"
+          :key="staff.id"
+          :staff-data="staff"
+        />
+      </template>
+      <template slot="modal-content">
+        <staff-full-bio :staff-data="activeStaffProfile" />
+      </template>
     </cards-area>
   </section>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapState, mapGetters} from 'vuex'
 
 export default {
   computed: {
     ...mapState ({
       staffList: state => state.staff
-    })
+    }),
+    ...mapGetters ([
+      'activeStaffProfile'
+    ])
   }
 }
 </script>

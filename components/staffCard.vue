@@ -1,6 +1,9 @@
 <template>
   <div class="staff-card col-md-6">
-    <div class="staff-inner single-product">
+    <div
+      class="staff-inner single-product"
+      @click.prevent="handleClick()"
+    >
       <div class="thumb">
         <img src="https://placehold.it/128x128">
       </div>
@@ -20,7 +23,18 @@
 
 <script>
 export default {
-
+  props: {
+    staffData: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    handleClick() {
+      this.$store.commit('setModalVisible', true)
+      this.$store.commit('setActiveStaffId', this.staffData.id)
+    }
+  }
 }
 </script>
 
