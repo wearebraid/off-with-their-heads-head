@@ -36,8 +36,9 @@ export default {
   },
   methods: {
     handleClick() {
-      this.$store.commit('setModalVisible', true)
-      this.$store.commit('setActiveStaffId', this.staffData.id)
+      this.$router.push({
+        path: this.staffData.slug
+      })
     }
   }
 }

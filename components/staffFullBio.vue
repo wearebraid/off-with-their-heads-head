@@ -1,35 +1,34 @@
 <template>
   <div class="staff-full-bio">
     <div class="headshot">
-      <img :src="staffData.headshot">
+      <img :src="activeStaffProfile.headshot">
     </div>
     <div class="meta">
       <h3>{{ name }}</h3>
-      <p><strong>{{ staffData.job_title }}, <em>{{ staffData.department }}</em></strong></p>
+      <p><strong>{{ activeStaffProfile.job_title }}, <em>{{ activeStaffProfile.department }}</em></strong></p>
       <p>
-        <strong>Email:</strong> <a :href="`mailto:${staffData.email}`">{{ staffData.email }}</a><br>
-        <strong>Phone:</strong> <a :href="`tel:${staffData.phone}`">{{ staffData.phone }}</a><br>
-        <strong>LinkedIn:</strong> <a :href="staffData.linkedin">{{ staffData.linkedin }}</a>
+        <strong>Email:</strong> <a :href="`mailto:${activeStaffProfile.email}`">{{ activeStaffProfile.email }}</a><br>
+        <strong>Phone:</strong> <a :href="`tel:${activeStaffProfile.phone}`">{{ activeStaffProfile.phone }}</a><br>
+        <strong>LinkedIn:</strong> <a :href="activeStaffProfile.linkedin">{{ activeStaffProfile.linkedin }}</a>
       </p>
     </div>
     <div
       class="bio"
-      v-html="staffData.bio"
+      v-html="activeStaffProfile.bio"
     />
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
-  props: {
-    staffData: {
-      type: Object,
-      required: true
-    }
-  },
   computed: {
+    ...mapGetters([
+      'activeStaffProfile'
+    ]),
     name () {
-      return `${this.staffData.first_name} ${this.staffData.last_name}`
+      return `${this.activeStaffProfile.first_name} ${this.activeStaffProfile.last_name}`
     }
   }
 }

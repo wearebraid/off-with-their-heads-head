@@ -9,8 +9,11 @@
           :staff-data="staff"
         />
       </template>
-      <template slot="modal-content">
-        <staff-full-bio :staff-data="activeStaffProfile" />
+      <template
+        v-if="activeStaffProfile"
+        slot="modal-content"
+      >
+        <nuxt-child :key="$route.params.slug" />
       </template>
     </cards-area>
   </section>
