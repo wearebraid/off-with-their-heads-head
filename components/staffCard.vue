@@ -1,6 +1,9 @@
 <template>
   <div class="staff-card col-md-6">
-    <div class="staff-inner single-product">
+    <div
+      class="staff-inner single-product"
+      @click.prevent="handleClick()"
+    >
       <div class="thumb">
         <img :src="staffData.headshot">
       </div>
@@ -29,6 +32,12 @@ export default {
   computed: {
     name () {
       return `${this.staffData.first_name} ${this.staffData.last_name}`
+    }
+  },
+  methods: {
+    handleClick() {
+      this.$store.commit('setModalVisible', true)
+      this.$store.commit('setActiveStaffId', this.staffData.id)
     }
   }
 }

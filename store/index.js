@@ -3,11 +3,15 @@ import {standardizeCMSData} from '../libs/utils'
 export const state = () => ({
   staff: [],
   siteURL: process.env.siteURL + '/',
-  endpoint: process.env.cms === 'drupal' ? '#no-endpoint' : 'wp-json/wp/v2/staff?per_page=100'
+  endpoint: process.env.cms === 'drupal' ? '#no-endpoint' : 'wp-json/wp/v2/staff?per_page=100',
+  modalVisible: false,
+  activeStaffId: false
 })
 
 export const getters = {
-
+  activeStaffProfile (state) {
+    return state.staff.find(item => item.id === state.activeStaffId)
+  }
 }
 
 export const actions = {
@@ -16,12 +20,18 @@ export const actions = {
   },
   async getStaff ({commit, state}) {
     let response = await this.$axios.$get(`http://${state.siteURL}${state.endpoint}`)
-    commit('set_staff', standardizeCMSData(response))
+    commit('setStaff', standardizeCMSData(response))
   }
 }
 
 export const mutations = {
-  set_staff (state, payload) {
+  setStaff (state, payload) {
     state.staff = payload
+  },
+  setModalVisible (state, payload) {
+    state.modalVisible = payload
+  },
+  setActiveStaffId (state, payload) {
+    state.activeStaffId = payload
   }
 }

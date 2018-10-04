@@ -10,8 +10,11 @@
         </div>
       </div>
       <div class="row">
-        <slot />
+        <slot name="grid-content" />
       </div>
+      <modal>
+        <slot name="modal-content" />
+      </modal>
     </div>
   </section>
 </template>
