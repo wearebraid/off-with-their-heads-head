@@ -38,19 +38,22 @@ export default {
 <style lang="scss" scoped>
 .staff-full-bio {
   @include medium-up {
+    padding: 1em;
     display: flex;
     flex-wrap: wrap;
   }
 }
 .headshot {
+  margin-top: .15em;
   margin-bottom: 1em;
 
-  @include medium-up {
+  img {
+    border-radius: 5px;
   }
 }
 .meta {
   @include medium-up {
-    padding-left: 1em;
+    padding-left: 1.5em;
     flex: 1;
   }
 }
