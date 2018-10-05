@@ -11,10 +11,25 @@ import cloneDeep from 'clone-deep'
  */
 export function standardizeCMSData (obj) {
   if (process.env.cms === 'drupal') {
+    return obj.map(node => reduce(node, (fields, field, val) => {
+    val = val[0]
+    let segments = field.match(/^field_(.*)/)
+      if (segments && segments[1]) {
+        fields[segments[1]] = val.value
+      } else if (field === 'path') {
+        if (val.alias) {
+          fields.slug = val.alias.replace(/^\//, '')
+        } else {
+          fields.slug = node.nid[0].value + ''
+        }
+      } else if (field === 'nid') {
+        fields.id = val.value
+      }
+      return fields
+    }, {}))
   } else if (process.env.cms === 'wordpress') {
-    obj = obj.map(({id, slug, acf}) => Object.assign({id, slug}, acf))
+    return obj.map(({id, slug, acf}) => Object.assign({id, slug}, acf))
   }
-  return obj
 }
 
 
