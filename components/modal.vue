@@ -41,6 +41,7 @@ export default {
   methods: {
     closeModal () {
       this.$store.commit('setModalVisible', false)
+      this.$router.push('/')
     }
   }
 }

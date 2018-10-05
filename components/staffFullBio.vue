@@ -20,11 +20,15 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
+
 export default {
-  props: {
-    staffData: {
-      type: Object,
-      required: true
+  computed: {
+    ...mapGetters([
+      'activeStaffProfile'
+    ]),
+    name () {
+      return `${this.activeStaffProfile.first_name} ${this.activeStaffProfile.last_name}`
     }
   }
 }

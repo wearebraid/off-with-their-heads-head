@@ -5,12 +5,16 @@ export const state = () => ({
   siteURL: process.env.siteURL + '/',
   endpoint: process.env.cms === 'drupal' ? '/staff?_format=json' : 'wp-json/wp/v2/staff?per_page=100',
   modalVisible: false,
-  activeStaffId: false
+  activeStaffSlug: false,
+  route: {}
 })
 
 export const getters = {
   activeStaffProfile (state) {
-    return state.staff.find(item => item.id === state.activeStaffId)
+    if (state.route && state.route.params && state.route.params.slug) {
+      return state.staff.find(item => item.slug === state.route.params.slug)
+    }
+    return false
   }
 }
 
@@ -31,7 +35,7 @@ export const mutations = {
   setModalVisible (state, payload) {
     state.modalVisible = payload
   },
-  setActiveStaffId (state, payload) {
-    state.activeStaffId = payload
+  setActiveStaffSlug (state, payload) {
+    state.activeStaffSlug = payload
   }
 }
