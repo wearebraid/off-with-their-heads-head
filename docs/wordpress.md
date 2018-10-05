@@ -14,7 +14,7 @@
 
 #### 4.) Install WordPress
 ---
-![Choose CMS](./img/pantheon-install-wordpress.jpg)
+![Choose CMS](./img/pantheon-install-platform.jpg)
 
 
 #### 5.) Follow the standard WordPress install steps. The data you provide here does not matter (but you will need it to log in for the first time). This data will ultimately be replaced by a database import in a later step.

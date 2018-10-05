@@ -3,7 +3,7 @@ import {standardizeCMSData} from '../libs/utils'
 export const state = () => ({
   staff: [],
   siteURL: process.env.siteURL + '/',
-  endpoint: process.env.cms === 'drupal' ? '#no-endpoint' : 'wp-json/wp/v2/staff?per_page=100',
+  endpoint: process.env.cms === 'drupal' ? '/staff?_format=json' : 'wp-json/wp/v2/staff?per_page=100',
   modalVisible: false,
   activeStaffId: false
 })
