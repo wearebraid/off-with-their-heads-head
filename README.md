@@ -6,7 +6,7 @@ It’s time to decapitate your CMS and go headless. The benefits of decoupling a
 
 ## CMS Setup Instructions
 
-We will be hosting the CMS portions of our sites through Pantheon. Sign up for a free account at <a href="https://pantheon.io/" target="_blank">https://pantheon.io/</a> and then follow the instructions below to get started.
+We will be hosting the CMS portions of our sites through Pantheon. Sign up for a free account at <a href="https://pantheon.io/" target="_blank">Pantheon.io</a> and then follow the instructions below to get started.
 
 - [Drupal Setup Instructions](./docs/drupal.md)
 - [WordPress Setup Instructions](./docs/wordpress.md)
